@@ -1,0 +1,22 @@
+#cardBox{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    background-color: #2C3639;
+}
+
+.card{
+    padding: 2%;
+    background-color: #3F4E4F;
+    color: #fff;
+}
+.card:hover{
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+#bottomPlayer{
+    color: #fff;
+}
+
+audio{
+    width: 33rem;
+}
