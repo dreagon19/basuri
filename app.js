@@ -2,10 +2,12 @@ $(function () {
   // *------------- Get fetch --------------*/
 
   function creatingCards(data) {
+    let count = 0;
+    let div = $(`<div class="row" ></div>`);
     data.forEach((element) => {
       let card = $(`
-        <div class="row p-3">
-          <div class="card" style="width: 18rem;">
+        <div class="col-md-3 col-sm-6 p-3">
+          <div class="card" style="width: 18rem; height:23rem">
             <img src="${element["videoThumbnails"][2]["url"]}" class="card-img-top" alt="No Image">
             <div class="card-body">
               <h6 class="card-title">${element["title"]}</h6>
@@ -14,8 +16,17 @@ $(function () {
             </div>
           </div>
         </div>`);
+    
+      
+      if (count < 4) {
+        div.append(card);
+        $("#cardBox").append(div);
+        count++;
+      } else {
+        count = 0;
+      }
 
-      $("#cardBox").append(card);
+      // $("#cardBox").append(card);
     });
   }
 
@@ -34,8 +45,6 @@ $(function () {
           </div>
         </nav>
       </div>`;
-
-
 
     $("#bottomPlayer").html(musicNav);
   }
